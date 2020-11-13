@@ -678,28 +678,30 @@ pre code {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px
+    flex-wrap: wrap
 }
 
-.row>[class*=col-][data-aos*=right] {
-    padding-right: 0
-}
-
-.row>[class*=col-][data-aos*=left] {
-    padding-left: 0
-}
-
-.row>[class*=col-][data-aos*=right] img, .header {
-    top: 50%;
-    left: 50%;
+.row .header {
     color: #fff;
     text-align: center;
+    padding: 20px
+}
+
+.row .header * {
+    margin-bottom: 0
+}
+
+.row [class*=col-][data-aos*=right] img, .header {
+    top: 50%;
+    left: 50%;
     position: relative;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%)
+}
+
+#skill .row div[class*=col-]:first-child {
+    padding-right: 20px
 }
 
 .no-gutters {
@@ -785,9 +787,7 @@ pre code {
 .col-xl-auto {
     position: relative;
     width: 100%;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px
+    min-height: 1px
 }
 
 .col {
