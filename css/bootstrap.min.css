@@ -132,6 +132,10 @@ p {
     margin-bottom: 1rem
 }
 
+p:last-child {
+    margin-bottom: 0
+}
+
 abbr[data-original-title],
 abbr[title] {
     text-decoration: underline;
@@ -3888,7 +3892,8 @@ tbody.collapse.show {
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
     height: 100%;
-    padding: 1.25rem
+    padding: 1.25rem;
+    text-align: justify
 }
 
 .card-title {

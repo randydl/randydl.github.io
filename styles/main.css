@@ -4635,7 +4635,7 @@ Created using IcoMoon - icomoon.io
 }
 
 .card .card-body {
-  min-height: 190px;
+  min-height: 1px;
 }
 
 .card[data-background-color="orange"] {
