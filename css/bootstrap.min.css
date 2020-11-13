@@ -679,6 +679,25 @@ pre code {
     margin-left: -15px
 }
 
+.row>[class*=col-][data-aos*=right] {
+    padding-right: 0
+}
+
+.row>[class*=col-][data-aos*=left] {
+    padding-left: 0
+}
+
+.row>[class*=col-][data-aos*=right] img, .header {
+    top: 50%;
+    left: 50%;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%)
+}
+
 .no-gutters {
     margin-right: 0;
     margin-left: 0
@@ -3868,8 +3887,8 @@ tbody.collapse.show {
 .card-body {
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
-    padding: 1.25rem;
-    padding-bottom: 0
+    height: 100%;
+    padding: 1.25rem
 }
 
 .card-title {
@@ -8462,10 +8481,5 @@ a.text-dark:hover {
 .invisible {
     visibility: hidden!important
 }
-
-.align-justify{
-    text-align: justify
-}
-
 
 /*# sourceMappingURL=bootstrap.min.css.map */

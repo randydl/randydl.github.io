@@ -2558,7 +2558,7 @@ textarea.form-control:focus, textarea.form-control:active {
 .progress-container .progress-badge {
   color: #888;
   font-size: 0.8571em;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 .progress-container .progress {
@@ -2918,7 +2918,7 @@ p {
 }
 
 .category {
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   font-weight: 700;
   color: #9A9A9A;
 }
@@ -7164,27 +7164,6 @@ Created using IcoMoon - icomoon.io
 .progress-container .aos-animate {
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
-}
-
-/* Experience Style */
-.cc-experience .cc-experience-header {
-  padding-top: 60px;
-  padding-right: 0;
-  text-align: center;
-  color: #fff;
-  text-transform: uppercase;
-}
-
-/* Education Style */
-.cc-education .h5 {
-  margin-bottom: 0;
-}
-
-.cc-education .cc-education-header {
-  padding-top: 60px;
-  padding-right: 0;
-  text-align: center;
-  color: #fff;
 }
 
 /* References Style */
