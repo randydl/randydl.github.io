@@ -700,7 +700,13 @@ pre code {
     -webkit-transform: translate(-50%, -50%)
 }
 
-#skill .row div[class*=col-]:first-child {
+#skill .card-body {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#skill .row div[class*=col-] {
+    padding-left: 20px;
     padding-right: 20px
 }
 
