@@ -1,24 +1,13 @@
 {
   "name": "randydl.github.io",
   "version": "1.0.0",
-  "description": "",
+  "description": "randy cv",
   "main": "server.js",
-  "directories": {
-    "doc": "docs"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/randydl/randydl.github.io.git"
-  },
-  "author": "",
+  "author": "randy",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/randydl/randydl.github.io/issues"
-  },
-  "homepage": "https://github.com/randydl/randydl.github.io#readme",
   "dependencies": {
     "express": "^4.17.1"
   }
