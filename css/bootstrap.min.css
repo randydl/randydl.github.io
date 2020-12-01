@@ -214,7 +214,7 @@ a {
   -webkit-text-decoration-skip: objects;
 }
 
-a.nav-link, .navbar-brand {
+a.nav-link, .navbar-brand, .btn {
   text-decoration: none;
 }
 
