@@ -125,7 +125,7 @@
               <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
                 <div class="card-body">
                   <div class="h5">Image Algorithm Engineer</div>
-                  <p>Developed a clinically applicable automatic deep learning system for rib fractures detection and segmentation from CT scans, the paper named <a href="libs/pdfjs/web/viewer.html?file=/docs/fracnet.pdf"><i>Deep-Learning-Assisted Detection and Segmentation of Rib Fractures from CT Scans: Development and Validation of FracNet</i></a> was published in EBioMedicine (by The Lancet). Established a large open source rib fracture dataset, now hosting <a href="https://ribfrac.grand-challenge.org/"><i>MICCAI 2020 RibFrac Challenge</i></a>.</p>
+                  <p>Developed a clinically applicable automatic deep learning system for rib fractures detection and segmentation from CT scans, which performed high sensitivity (92.9%) with average FPs (5.27) and reduced approximate 86% clinical time consuming. A <a href="libs/pdfjs/web/viewer.html?file=/docs/fracnet.pdf"><i>paper</i></a> was published in EBioMedicine (by The Lancet). A subset of the dataset was open-source to research community, which is the first open large-scale dataset in this application, and now hosting <a href="https://ribfrac.grand-challenge.org/"><i>MICCAI 2020 RibFrac Challenge</i></a>.</p>
                   <p>Developed a solution of 2D+1D CNN in Kaggle competition of RSNA Intracranial Hemorrhage Detection, which ranked top 8% among more than 1345 teams in 75 countries.</p>
                 </div>
               </div>
@@ -188,9 +188,9 @@
               <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
                 <div class="card-body">
                   <div class="h5">Detection and Segmentation of Rib Fractures from CT Scans</div>
-                  <p>Developed a deep learning model named FracNet to detect and segment rib fractures, and split 720,60 and 120 patients randomly as training cohort, tuning cohort and test cohort.</p>
-                  <p>Used Free-Response ROC (FROC) analysis to evaluate the sensitivity and false positives of the detection performance, and Intersection-over-Union (IoU) and Dice Coefficient (Dice) to evaluate the segmentation performance of predicted rib fractures.</p>
-                  <p>Used observer studies to benchmark the FracNet and evaluate its clinical applicability.</p>
+                  <p>Extracted the bone areas through a series of morphological operations (e.g., thresholding and filtering) to speed up the detection. The intensity of input voxels was clipped to the bone window (level=450, width=1100) and normalized to [-1,1].</p>
+                  <p>Developed a customized 3D UNet named FracNet to perform segmentation in a sliding window fashion. Used a sampling strategy, applied data augmentation of random plane flipping and combined soft Dice loss and binary cross-entropy (BCE) as loss function to alleviate the imbalance between positive and negative samples.</p>
+                  <p>Applied Radial Basis Function (RBF) to sliding window inference, so as to reduce the weights of the predictions near the edges of sliding window and get more accurate pixel level predictions, which increased sensitivity by 1.1%. Binarized the post-processed segmentation results and then computed connected components.</p>
                 </div>
               </div>
             </div>
@@ -220,8 +220,8 @@
                 <div class="card-body">
                   <div class="h5">Intelligent Detection of Pulmonary Nodules</div>
                   <p>Developed a 3D CNN segmentation model by combining ASPP, ResNet and UNet to detect mutiscale pulmonary nodules with more accurate prediction positions.</p>
-                  <p>Applied Radial Basis Function (RBF) to sliding window inference method, which could reduce the weights of predictions near the edges of sliding window.</p>
-                  <p>Developed a 3D CNN classification model and trained with hard negative mining to further reduce false positives of the segmentation model.</p>
+                  <p>Developed 3 different 3D CNN classification models (ResNet, DenseNet, SENet) and trained respectively with hard negative mining to reduce false positives of the segmentation model.</p>
+                  <P>Used Linear Regression (LR) to fuse the features learned by the models mentioned above to further reduce misdiagnosis rate of the segmentation model, which reduced false positives from 146.5 per scan to 5 per scan.</P>
                 </div>
               </div>
             </div>
