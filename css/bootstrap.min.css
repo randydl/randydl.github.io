@@ -695,7 +695,7 @@ pre code {
   margin-bottom: 0;
 }
 
-.row [class*=col-][data-aos*=right] img, .header {
+.row [class*=col-][data-aos*=fade-] img, .header {
   top: 50%;
   left: 50%;
   position: relative;
