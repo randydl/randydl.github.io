@@ -1,1 +1,6 @@
 /node_modules/*
+/.vscode/*
+*.py
+/images/person/*
+/images/face/*
+/images/tmp/*
