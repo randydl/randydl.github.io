@@ -1,20 +1,34 @@
 // Add your javascript here
 // Don't forget to add it into respective layouts where this js file is needed
 
-$(document).ready(function() {
-  AOS.init( {
+$(document).ready(function () {
+  AOS.init({
     // uncomment below for on-scroll animations to played only once
-    // once: true  
+    // once: true
   }); // initialize animate on scroll library
+
+  function getQueryVariable(variable) {
+    var query = window.location.search.substring(1);
+    var vars = query.split("&");
+    for (var i = 0; i < vars.length; i++) {
+      var pair = vars[i].split("=");
+      if (pair[0] == variable) { return pair[1]; }
+    }
+    return null;
+  }
+
+  if (getQueryVariable("aos") === "off") {
+    $("[data-aos]").removeAttr("data-aos");
+  }
 });
 
 // Smooth scroll for links with hashes
 $('a.smooth-scroll')
-.click(function(event) {
+.click(function (event) {
   // On-page links
   if (
-    location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-    && 
+    location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+    &&
     location.hostname == this.hostname
   ) {
     // Figure out element to scroll to
@@ -26,7 +40,7 @@ $('a.smooth-scroll')
       event.preventDefault();
       $('html, body').animate({
         scrollTop: target.offset().top
-      }, 1000, function() {
+      }, 1000, function () {
         // Callback after animation
         // Must change focus!
         var $target = $(target);
@@ -34,7 +48,7 @@ $('a.smooth-scroll')
         if ($target.is(":focus")) { // Checking if the target was focused
           return false;
         } else {
-          $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+          $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
           $target.focus(); // Set focus again
         };
       });
