@@ -695,23 +695,13 @@ pre code {
   margin-bottom: 0;
 }
 
-.row [class*=col-][data-aos*=fade-] img, .header {
+.row [class*=col-] img, .header {
   top: 50%;
   left: 50%;
   position: relative;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
-}
-
-#skill .card-body {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-#skill .row div[class*=col-] {
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
 .no-gutters {
