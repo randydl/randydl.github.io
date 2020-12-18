@@ -20,6 +20,12 @@ $(document).ready(function () {
   if (getQueryVariable("aos") === "off") {
     $("[data-aos]").removeAttr("data-aos");
   }
+
+  if (getQueryVariable("lang") === "zh") {
+    $("[lang][lang!=zh]").remove();
+  } else {
+    $("[lang=zh]").remove();
+  }
 });
 
 // Smooth scroll for links with hashes
