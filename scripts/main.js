@@ -18,6 +18,7 @@ $(document).ready(function () {
 
   if (getQueryVariable("lang") === "zh") {
     $("[lang=en]").css("display", "none");
+    $("head").append('<style type="text/css">@media (min-width:1200px) {.container { max-width: 960px; }}</style>');
   } else {
     $("[lang=zh]").css("display", "none");
   }

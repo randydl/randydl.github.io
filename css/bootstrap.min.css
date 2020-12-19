@@ -695,7 +695,7 @@ pre code {
   margin-bottom: 0;
 }
 
-.row [class*=col-] img, .header {
+.row [class*=col-] :not(td)>img, .header {
   top: 50%;
   left: 50%;
   position: relative;
