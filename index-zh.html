@@ -17,9 +17,7 @@
     return null;
   }
 
-  var href = window.location.href.replace("index-zh", "index");
-  if (!getQueryVariable("lang")) { href += "&lang=zh"; }
-  window.location.href = href;
+  window.location.href = window.location.origin + "/index.html?lang=zh";
 </script>
 </body>
 
