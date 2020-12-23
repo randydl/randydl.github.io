@@ -241,10 +241,13 @@
             </div>
             <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
               <div class="card-body">
-                <div class="h5">Detection and Segmentation of Rib Fractures from CT Scans</div>
-                <p>Extracted the bone areas through a series of morphological operations (e.g., thresholding and filtering) to speed up the detection. The intensity of input voxels was clipped to the bone window (level=450, width=1100) and normalized to [-1,1].</p>
-                <p>Developed a customized 3D UNet named FracNet to perform segmentation in a sliding window fashion. Used a sampling strategy, applied data augmentation of random plane flipping and combined soft Dice loss and binary cross-entropy (BCE) as loss function to alleviate the imbalance between positive and negative samples.</p>
-                <p>Applied Radial Basis Function (RBF) to sliding window inference, so as to reduce the weights of the predictions near the edges of sliding window and get more accurate pixel level predictions, which increased sensitivity by 1.1%. Binarized the post-processed segmentation results and then computed connected components.</p>
+                <div class="h5"><div lang="en">Detection and Segmentation of Rib Fractures from CT Scans</div><div lang="zh">深度学习辅助的肋骨骨折检测</div></div>
+                <p lang="en">Extracted the bone areas through a series of morphological operations (e.g., thresholding and filtering) to speed up the detection. The intensity of input voxels was clipped to the bone window (level=450, width=1100) and normalized to [-1,1].</p>
+                <p lang="en">Developed a customized 3D UNet named FracNet to perform segmentation in a sliding window fashion. Used a sampling strategy, applied data augmentation of random plane flipping and combined soft Dice loss and binary cross-entropy (BCE) as loss function to alleviate the imbalance between positive and negative samples.</p>
+                <p lang="en">Applied Radial Basis Function (RBF) to sliding window inference, so as to reduce the weights of the predictions near the edges of sliding window and get more accurate pixel level predictions, which increased sensitivity by 1.1%. Binarized the post-processed segmentation results and then computed connected components.</p>
+                <p lang="zh">通过一系列形态学操作（例如，阈值化和滤波）提取骨骼区域，以加快检测速度。输入体素的强度被裁剪到骨骼窗口（窗位=450，窗宽=1100）并归一化为[-1,1]。</p>
+                <p lang="zh">基于3D UNet设计了FracNet，以滑动窗口的方式进行分割。使用合理的采样策略，应用随机旋转、偏移、翻转和噪声等数据增广方式，结合soft Dice loss和binary cross-entropy (BCE) loss作为损失函数来减轻正负样本之间的不平衡。</p>
+                <p lang="zh">将径向基函数（RBF）应用到滑动窗口推理中，以减小滑动窗口边缘附近的预测值的权重，从而获得了准确的像素级别预测，并将敏感度进一步提高了1.1％。随后进行二值化和连通域计算等操作以进行指标评估。</p>
               </div>
             </div>
           </div>
@@ -256,10 +259,13 @@
             </div>
             <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
               <div class="card-body">
-                <div class="h5">Intelligent Detection of Pulmonary Nodules</div>
-                <p>Developed a 3D CNN segmentation model by combining ASPP, ResNet and UNet to detect mutiscale pulmonary nodules with more accurate prediction positions.</p>
-                <p>Developed 3 different 3D CNN classification models (ResNet, DenseNet, SENet) and trained respectively with hard negative mining to reduce false positives of the segmentation model.</p>
-                <P>Used Linear Regression (LR) to fuse the features learned by the models mentioned above to further reduce misdiagnosis rate of the segmentation model, which reduced false positives from 146.5 per scan to 5 per scan.</P>
+                <div class="h5"><div lang="en">Intelligent Detection of Pulmonary Nodules</div><div lang="zh">基于深度学习的肺结节检测</div></div>
+                <p lang="en">Developed a 3D CNN segmentation model by combining ASPP, ResNet and UNet to detect mutiscale pulmonary nodules with more accurate prediction positions.</p>
+                <p lang="en">Developed 3 different 3D CNN classification models (ResNet, DenseNet, SENet) and trained respectively with hard negative mining to reduce false positives of the segmentation model.</p>
+                <P lang="en">Used Linear Regression (LR) to fuse the features learned by the models mentioned above to further reduce misdiagnosis rate of the segmentation model, which reduced false positives from 146.5 per scan to 5 per scan.</P>
+                <p lang="zh">由于肺结节在大小、形态和类型上存在较大差异，因此基于3D UNet并结合ASPP、ResNet等，来分割出多尺度、多模态的肺结节。</p>
+                <p lang="zh">在上一步推荐的可疑肺结节中不可避免地会存在较多假阳性结果，因此需要假阳性肺结节抑制算法来提高检测精度。利用已有的标注数据并结合难例挖掘，分别训练3种不同的肺结节分类模型（例如，ResNet、DenseNet和SENet）。</p>
+                <p lang="zh">由于不同的分类模型可能会侧重地学习到肺结节的某一些特征，因此利用线性回归等操作来进一步融合模型，从而得到更准确的分类结果。最终，把分割模型的平均FPs (146.5)大幅减少到了FPs (5)。</p>
               </div>
             </div>
           </div>
@@ -271,11 +277,14 @@
             </div>
             <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
               <div class="card-body">
-                <div class="h5">RSNA Intracranial Hemorrhage Detection</div>
-                <p>Combined multiple window features in every patient's CT scans.</p>
-                <p>Developed a 2D CNN model as a feature extractor and trained with transfer learning.</p>
-                <p>Extracted extractor's Global Average Pooling (GAP) layer features from adjacent slices in each patient's CT scans and combined all the features as a grouped feature to obtain 2.5D features.</p>
-                <p>Developed a 1D CNN model as a classifier and trained with all grouped features.</p>
+                <div class="h5"><div lang="en">RSNA Intracranial Hemorrhage Detection</div><div lang="zh">RSNA颅内出血检测</div></div>
+                <p lang="en">Combined multiple window features in every patient's CT scans.</p>
+                <p lang="en">Developed a 2D CNN model as a feature extractor and trained with transfer learning.</p>
+                <p lang="en">Extracted extractor's Global Average Pooling (GAP) layer features from adjacent slices in each patient's CT scans and combined all the features as a grouped feature to obtain 2.5D features.</p>
+                <p lang="en">Developed a 1D CNN model as a classifier and trained with all grouped features.</p>
+                <p lang="zh">颅内出血数据集中包含多个病人，每个病人又包含数目不同的多个切片。因此，我们设计了两阶段检测系统来充分地利用数据的特点。</p>
+                <p lang="zh">第一阶段，使用多种不同的窗宽窗位来获得层次丰富的融合特征信息，将这些特征送入2D CNN进行迁移学习，使2D CNN成为较强的特征提取器。</p>
+                <p lang="zh">第二阶段，将病灶的前后几帧分别送入特征提取器，提取GAP层的特征并利用1D CNN等再进行融合，从而结合了多个切片间的空间信息，使得总体分类结果更加精确。</p>
               </div>
             </div>
           </div>
@@ -287,10 +296,12 @@
             </div>
             <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
               <div class="card-body">
-                <div class="h5">Object Tracking Algorithm Based on MeanShift</div>
-                <p>Divided the area of each sliding window into small connected regions called cells, calculated each cell's color histogram and combined all color histograms as a group called block color histogram, like the histogram of oriented gradients (HOG) algorithm.</p>
-                <p>Used sliding window method to traverse the image and obtain all block color histograms.</p>
-                <p>Compared the similarity between adjacent images' all block color histograms to get the confidence map, then applied the MeanShift algorithm to iterate on the confidence map.</p>
+                <div class="h5"><div lang="en">Object Tracking Algorithm Based on MeanShift</div><div lang="zh">基于MeanShift的目标跟踪</div></div>
+                <p lang="en">Divided the area of each sliding window into small connected regions called cells, calculated each cell's color histogram and combined all color histograms as a group called block color histogram, like the histogram of oriented gradients (HOG) algorithm.</p>
+                <p lang="en">Used sliding window method to traverse the image and obtain all block color histograms.</p>
+                <p lang="en">Compared the similarity between adjacent images' all block color histograms to get the confidence map, then applied the MeanShift algorithm to iterate on the confidence map.</p>
+                <p lang="zh">借鉴方向梯度直方图（HOG）的思想，将普通颜色直方图改进为分块颜色直方图。分块颜色直方图由于将目标区域划分成了数个局部区域，因此具有较强的局部特征表达能力。</p>
+                <p lang="zh">使用滑动窗口方法遍历图像并获得所有分块颜色直方图，比较相邻图像所有分块颜色直方图之间的相似度，以获得置信度图。置信图实质上为概率密度图，它代表了目标区域的特征在一幅新图像中存在的概率。最后，利用MeanShift算法在置信图中迭代，从而找到该帧图像的目标区域。</p>
               </div>
             </div>
           </div>
@@ -302,10 +313,13 @@
             </div>
             <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
               <div class="card-body">
-                <div class="h5">3D-Object Modeling with Kinect in Indoor Condition</div>
-                <p>Calibrated the Kinect color camera to obtain the camera's internal parameter matrix and aligned the depth camera with the color camera.</p>
-                <p>Created an inter-frame filtering algorithm based on joint bilateral filtering and used the filtering algorithm to fix depth images.</p>
-                <p>Obtained the point clouds through Point Cloud Library (PCL), used the Iterative Closest Point (ICP) algorithm to align all point clouds to the same coordinate system.</p>
+                <div class="h5"><div lang="en">3D-Object Modeling with Kinect in Indoor Condition</div><div lang="zh">基于RGB-D传感器的3D室内建模</div></div>
+                <p lang="en">Calibrated the Kinect color camera to obtain the camera's internal parameter matrix and aligned the depth camera with the color camera.</p>
+                <p lang="en">Created an inter-frame filtering algorithm based on joint bilateral filtering and used the filtering algorithm to fix depth images.</p>
+                <p lang="en">Obtained the point clouds through Point Cloud Library (PCL), used the Iterative Closest Point (ICP) algorithm to align all point clouds to the same coordinate system.</p>
+                <p lang="zh">首先对Kinect进行标定，获取内参数矩阵，从而将深度摄像头与彩色摄像头对齐到同一坐标系下。</p>
+                <p lang="zh">由于深度摄像头不可避免地容易受到光线、距离等因素的干扰，会丢失掉很多信息。于是我设计了一种新的帧间滤波算法，利用连续多帧图像之间的相关性，对原始深度图像进行修复。</p>
+                <p lang="zh">通过PCL将彩色图像和深度图像结合，从而获取点云。利用ICP算法将多角度下拍摄的点云统一到相同坐标系下，完成点云精确配准，从而得到物体的3D模型。</p>
               </div>
             </div>
           </div>
