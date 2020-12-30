@@ -7,6 +7,8 @@
 
 <body>
 <script>
+  debugger;
+
   function getQueryVariable(variable) {
     var query = window.location.search.substring(1);
     var vars = query.split("&");
@@ -17,7 +19,7 @@
     return null;
   }
 
-  window.location.href = window.location.origin + "/index.html?lang=zh";
+  window.location.href = "index.html?lang=zh";
 </script>
 </body>
 

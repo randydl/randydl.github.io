@@ -18,11 +18,19 @@ $(document).ready(function () {
     $("[data-aos]").removeAttr("data-aos");
   }
 
-  if (getQueryVariable("lang") === "zh") {
+  if (getQueryVariable("lang") === "zh" || window.location.hostname === "randydl.gitee.io") {
     $("[lang=en]").remove();
     $("head").append('<style type="text/css">@media (min-width:1200px) {.container { max-width: 960px; }}</style>');
   } else {
     $("[lang=zh]").remove();
+  }
+
+  // Only for fixing gitee can't show mp4 video.
+  if (window.location.hostname === "randydl.gitee.io") {
+    $("a[href$='.mp4']").each(function (idx, elem) {
+      $(elem).attr("href", "https://randydl.github.io/" + $(elem).attr("href"));
+      // console.log(idx, $(elem).attr("href"));
+    });
   }
 
   AOS.init({
