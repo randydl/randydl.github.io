@@ -2,8 +2,6 @@
 // Don't forget to add it into respective layouts where this js file is needed
 
 $(document).ready(function () {
-  debugger;
-
   function getQueryVariable(variable) {
     var query = window.location.search.substring(1);
     var vars = query.split("&");
@@ -21,6 +19,11 @@ $(document).ready(function () {
   if (getQueryVariable("lang") === "zh" || window.location.hostname === "randydl.gitee.io") {
     $("[lang=en]").remove();
     $("head").append('<style type="text/css">@media (min-width:1200px) {.container { max-width: 960px; }}</style>');
+
+    // Special process for education.
+    if ($("#education .container").width() > 720) {
+      $("#education .row:eq(1) div:eq(0)").attr("class", "col-md-6");
+    }
   } else {
     $("[lang=zh]").remove();
   }
@@ -32,6 +35,12 @@ $(document).ready(function () {
       // console.log(idx, $(elem).attr("href"));
     });
   }
+
+  // Use PDF.js render pdf file
+  $("a[href$='.pdf']").each(function (idx, elem) {
+    $(elem).attr("href", "libs/pdfjs/web/viewer.html?file=/" + $(elem).attr("href"));
+    // console.log(idx, $(elem).attr("href"));
+  });
 
   AOS.init({
     // uncomment below for on-scroll animations to played only once
