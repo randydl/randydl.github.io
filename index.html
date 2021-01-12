@@ -261,7 +261,7 @@
                 <p lang="en">Extracted extractor's Global Average Pooling (GAP) layer features from adjacent slices in each patient's CT scans and combined all the features as a grouped feature to obtain 2.5D features.</p>
                 <p lang="en">Developed a 1D CNN model as a classifier and trained with all grouped features.</p>
                 <p lang="zh">颅内出血数据集中包含多个病人，每个病人又包含数目不同的多个切片。因此，我们设计了两阶段检测系统来充分地利用数据的特点。</p>
-                <p lang="zh">第一阶段，使用多种不同的窗宽窗位来获得层次丰富的融合特征信息，将这些特征送入2D CNN进行迁移学习，使2D CNN成为较强的特征提取器。</p>
+                <p lang="zh">第一阶段，由于不同组织具有不同CT值，将脑窗(40, 80)、硬膜下窗(80, 200)、骨窗(600, 2800)组合形成3通道融合特征图，对于提取不同颅内不同部分的特征非常重要。多样性数据增广来解决类别不平衡问题，然后将这些特征送入分类网络进行迁移学习，使之成为较强的特征提取器。</p>
                 <p lang="zh">第二阶段，将病灶的前后几帧分别送入特征提取器，提取GAP层的特征并利用1D CNN等再进行融合，从而结合了多个切片间的空间信息，使得总体分类结果更加精确。</p>
               </div>
             </div>
@@ -279,7 +279,7 @@
                 <p lang="en">Used sliding window method to traverse the image and obtain all block color histograms.</p>
                 <p lang="en">Compared the similarity between adjacent images' all block color histograms to get the confidence map, then applied the MeanShift algorithm to iterate on the confidence map.</p>
                 <p lang="zh">借鉴方向梯度直方图（HOG）的思想，将普通颜色直方图改进为分块颜色直方图。分块颜色直方图由于将目标区域划分成了数个局部区域，因此具有较强的局部特征表达能力。</p>
-                <p lang="zh">使用滑动窗口方法遍历图像并获得所有分块颜色直方图，比较相邻图像所有分块颜色直方图之间的相似度，以获得置信度图。置信图实质上为概率密度图，它代表了目标区域的特征在一幅新图像中存在的概率。最后，利用MeanShift算法在置信图中迭代，从而找到该帧图像的目标区域。</p>
+                <p lang="zh">使用滑动窗口方法遍历图像并获得当前帧的分块颜色直方图特征与HOG特征，并进行融合。将当前帧的融合特征与上一帧的进行匹配，以获得置信度图。置信图实质上为概率密度图，它代表了目标区域的特征在一幅新图像中存在的概率。最后，利用MeanShift算法在置信图中迭代，从而找到该帧图像的目标区域。</p>
               </div>
             </div>
           </div>
