@@ -12,9 +12,7 @@ $(document).ready(function () {
     return null;
   }
 
-  if (getQueryVariable("aos") === "off") {
-    $("[data-aos]").removeAttr("data-aos");
-  }
+  $("[data-aos]").removeAttr("data-aos");
 
   if (getQueryVariable("lang") === "zh" || window.location.hostname === "randydl.gitee.io") {
     $("[lang=en]").remove();
