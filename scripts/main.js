@@ -13,10 +13,10 @@ $(document).ready(function () {
   }
 
   $("[data-aos]").removeAttr("data-aos");
+  $("head").append('<style type="text/css">@media (min-width:1200px) {.container { max-width: 960px; }}</style>');
 
   if (getQueryVariable("lang") === "zh" || window.location.hostname === "randydl.gitee.io") {
     $("[lang=en]").remove();
-    $("head").append('<style type="text/css">@media (min-width:1200px) {.container { max-width: 960px; }}</style>');
 
     // Special process for education.
     if ($("#education .container").width() > 720) {
