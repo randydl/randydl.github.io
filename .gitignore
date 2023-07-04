@@ -5,3 +5,4 @@
 /imgs/face/*
 /imgs/tmp/*
 temp/
+package-lock.json
