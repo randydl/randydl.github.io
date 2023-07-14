@@ -6,3 +6,4 @@
 /imgs/tmp/*
 temp/
 package-lock.json
+nohup.out
