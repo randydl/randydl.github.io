@@ -4,6 +4,6 @@
 /imgs/person/*
 /imgs/face/*
 /imgs/tmp/*
-temp/
+*temp*
 package-lock.json
 nohup.out
