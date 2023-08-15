@@ -8,7 +8,7 @@ $(document).ready(function () {
   });
 
   // use PDF.js viewer open pdf files
-  $('a[href$=".pdf"]').each(function () {
+  $('a[href$=".pdf"]:not(.no-pdfjs)').each(function () {
     var pdfUrl = $(this).attr('href');
     if (pdfUrl[0] !== '/' && !pdfUrl.startsWith('http')) {
       // var basePath = window.location.href;
