@@ -2,11 +2,22 @@
 // Don't forget to add it into respective layouts where this js file is needed
 
 $(document).ready(function () {
+  // initialize animate on scroll library
   AOS.init({
-    // uncomment below for on-scroll animations to played only once
-    // once: true
-    disable: true
-  }); // initialize animate on scroll library
+    disable: true // once: true
+  });
+
+  // use PDF.js viewer open pdf files
+  $('a[href$=".pdf"]').each(function () {
+    var pdfUrl = $(this).attr('href');
+    if (pdfUrl[0] !== '/' && !pdfUrl.startsWith('http')) {
+      // var basePath = window.location.href;
+      // basePath = basePath.substring(0, basePath.lastIndexOf('/') + 1);
+      // pdfUrl = basePath + pdfUrl;
+      pdfUrl = '/' + pdfUrl;
+    }
+    $(this).attr('href', 'pdfjs/web/viewer.html?file=' + encodeURIComponent(pdfUrl));
+  });
 });
 
 // Smooth scroll for links with hashes

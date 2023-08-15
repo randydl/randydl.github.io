@@ -36,6 +36,10 @@ body {
     margin-bottom: 0;
 }
 
+.no-margin>* {
+    margin: 0;
+}
+
 .row {
     margin-right: 0;
     margin-left: 0;
@@ -76,10 +80,6 @@ h5,
     line-height: normal;
 }
 
-.h6 {
-    text-transform: none;
-}
-
 .category {
     font-weight: 500;
     text-transform: none;
@@ -91,6 +91,7 @@ h5,
 
 #portfolio .card-body a,
 #experience .card-body a,
+#education .card-body a,
 #publication .card-body a,
 #about .card-body a {
     text-decoration: underline;
