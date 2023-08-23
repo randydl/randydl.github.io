@@ -7,3 +7,4 @@
 *temp*
 package-lock.json
 nohup.out
+*.log
