@@ -89,6 +89,7 @@ h5,
     color: black;
 }
 
+#skill .card-body a,
 #portfolio .card-body a,
 #experience .card-body a,
 #education .card-body a,
@@ -105,4 +106,16 @@ h5,
 #education .row-header> :last-child,
 #experience .row-header> :last-child {
     padding-bottom: 1em;
+}
+
+#about {
+    padding-top: 50px;
+}
+
+#publication,
+#education,
+#experience,
+#portfolio,
+#skill {
+    padding-top: 0;
 }
