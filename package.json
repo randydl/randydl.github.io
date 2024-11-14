@@ -1,6 +1,10 @@
 {
   "name": "randydl.github.io",
   "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
     "express": "latest"
   }
