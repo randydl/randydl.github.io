@@ -3,13 +3,13 @@
 ### 下载项目
 
 ```bash
-$ git clone https://gitee.com/randydl/randydl.git
+git clone https://gitee.com/randydl/randydl.git
 ```
 
 ### 启动程序
 
 ```bash
-$ cd randydl
-$ npm install
-$ node server.js
+cd randydl
+npm install
+node server.js
 ```
